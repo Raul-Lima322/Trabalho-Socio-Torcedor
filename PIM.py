@@ -215,8 +215,8 @@ def LoginTorcedor():
 
 def AreaSocio(Socio):
     while True:
-        print(f"\n--- ÁREA DO SÓCIO | Bem-vindo, {Socio['nome']} ---")
-        print(f"Plano atual: {Socio['plano']}")
+        print(f"\n--- ÁREA DO SÓCIO | BEM-VINDO, {Socio['nome']} ---")
+        print(f"\nPLANO ATUAL: {Socio['plano']}")
         
      
         StatusFinanceiro = "EM DIA" if Socio['ativo'] else "PENDENTE (PAGAR MENSALIDADE)"
@@ -250,7 +250,7 @@ def AreaSocio(Socio):
                 print("\n[OK] Sua mensalidade já está em dia! Não há boletos pendentes.")
             else:
                 print(f"\n--- SIMULAÇÃO DE PAGAMENTO ---")
-                print(f"Plano: {Socio['plano']}")
+                print(f"\nPlano: {Socio['plano']}")
                 Confirmar = input("Deseja confirmar o pagamento da mensalidade? (S/N): ").upper().strip()
                 
                 if Confirmar == "S":
