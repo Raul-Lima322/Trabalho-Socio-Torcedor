@@ -55,7 +55,7 @@ def LimparTerminal():
 
 
 def ExibirCabecalho():
-    print("\n" + "=" * 40) # Exibe "=" 45 vezes
+    print("\n" + "=" * 40) # Exibe "=" 40 vezes
     print("   BOTAFOGO FUTEBOL CLUBE - GESTÃO")
     print("=" * 40)
 
@@ -113,7 +113,7 @@ def CriarConta():
         if not Email:
             print("[!] O e-mail é obrigatório.")# Caso o usuario não digite nada, ele volta e obriga o usuario a digitar
             continue
-        if any(S['email'] == Email for S in BaseSocios):# serve para não haver repetição de e-mail
+        if any(S['email'] == Email for S in BaseSocios):# Garante que não existam e-mails duplicados na base
             print("[!] Este e-mail já está cadastrado. Tente outro.")
             continue
         break
@@ -146,7 +146,7 @@ def CriarConta():
         except ValueError:
             print("[!] Erro: Digite apenas números e use ponto para decimais.")
 
-    LimiteSocial = 3242.00 # Define o limite de renda para o plano Social (equivalente a 2 salários mínimos)
+    LimiteSocial = 3242.00 # Limite para plano Social (2 salários mínimos)
     EntraSocial = Renda <= LimiteSocial # Caso o usuario tenha uma renda menor que dois salarios minimos, o plano "Social" fica disponivel
     
     # Validação do Plano
@@ -165,7 +165,7 @@ def CriarConta():
             print("Bronze - 20% de desconto")
             OpcoesValidas = ["Ouro", "Prata", "Bronze"]
             
-        # O ".capitalize()" deixa a primeira letra maiuscula e o resto minuscula. O ".strip()" remove espaços 
+        # O ".capitalize()" deixa a primeira letra maiuscula e o resto minuscula e o ".strip()" remove espaços 
         Plano = input("\nEscolha seu plano: ").capitalize().strip() 
         
         if not Plano:
