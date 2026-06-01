@@ -1,4 +1,4 @@
-import os #Biblioteca necessaria para limpar o terminal
+import os #Biblioteca necessaria para limpar o terminal, permite interagir com o sistema operacional
 
 SenhaAdmin = "9090"
 
@@ -63,7 +63,7 @@ def ExibirCabecalho():
 def CalcularIngresso(ValorBase, Categoria):
     Planos = {"Ouro": 1.0, "Social": 0.8, "Prata": 0.5, "Bronze": 0.2}
     TaxaDesconto = Planos.get(Categoria, 0.0)
-    return ValorBase * (1 - TaxaDesconto) # Os planos retiram uma parte do preço. Exmplo: Bronze = 0.2 (ou 20%). Então o usuario paga o resto = 0.8 (ou 80%)   
+    return ValorBase * (1 - TaxaDesconto) # Os planos retiram uma parte do preço. Exmplo: Bronze = 0.2 (20%). Então o usuario paga o resto = 0.8 (80%)   
 
 
 def PainelAdmin():
@@ -81,8 +81,8 @@ def PainelAdmin():
             for S in BaseSocios:
                 Contagem[S['plano']] += 1
             
-            TotalSocios = len(BaseSocios)
-            
+            TotalSocios = len(BaseSocios) # O ".len" é pra contar quantos elementos existem dentro da lista
+             
             print("\n--- Relatório de Sócios ---")
             for Plano, Quantidade in Contagem.items():
                 # Calcula a porcentagem (evita erro se a base estiver vazia)
@@ -113,7 +113,7 @@ def CriarConta():
         if not Email:
             print("[!] O e-mail é obrigatório.")# Caso o usuario não digite nada, ele volta e obriga o usuario a digitar
             continue
-        if any(S['email'] == Email for S in BaseSocios):# Garante que não existam e-mails duplicados na base
+        if any(S['email'] == Email for S in BaseSocios):# Garante que não existam e-mails duplicados
             print("[!] Este e-mail já está cadastrado. Tente outro.")
             continue
         break
@@ -293,9 +293,9 @@ def Menu():
             LimparTerminal()
             print("-" * 36)
             print("Saudações Botafoguense! Até logo.")
-            break
-
+            break # Quebra o while
 # Caso o usuario digite algo que não seja 0, 1, 2 ou 3 o programa apenas retorna ao Menu()
-Menu()
+
+Menu() 
 
 #GitHub: https://github.com/Raul-Lima322/Trabalho-Socio-Torcedor.git
