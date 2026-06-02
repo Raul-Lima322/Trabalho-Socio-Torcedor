@@ -153,7 +153,7 @@ def CriarConta():
     while True:
         print("\nPlanos Disponíveis: ")
         
-        # Se o social estiver disponível, exibe só Social e Ouro
+        # Se o social estiver disponível, exibe só Social e Ouro. Recomendação do professor Kotaki
         if EntraSocial:
             print("Social - 80% de desconto")
             print("Ouro - 100% de desconto")
@@ -210,8 +210,7 @@ def LoginTorcedor():
     
     print("[!] E-mail ou senha incorretos.")
     input("Pressione Enter para tentar novamente...")
-    return None # Caso as informações não batam, ele retona nada
-
+    return None 
 
 def AreaSocio(Socio):
     while True:
@@ -298,4 +297,4 @@ def Menu():
 
 Menu() 
 
-#GitHub: https://github.com/Raul-Lima322/Trabalho-Socio-Torcedor.git
+# https://github.com/Raul-Lima322/Trabalho-Socio-Torcedor.git
