@@ -62,7 +62,7 @@ def ExibirCabecalho():
 
 def CalcularIngresso(ValorBase, Categoria):
     Planos = {"Ouro": 1.0, "Social": 0.8, "Prata": 0.5, "Bronze": 0.2}
-    TaxaDesconto = Planos.get(Categoria, 0.0)
+    TaxaDesconto = Planos.get(Categoria, 0.0) # O ".get()" é usado para buscar o valor de uma chave
     return ValorBase * (1 - TaxaDesconto) # Os planos retiram uma parte do preço. Exmplo: Bronze = 0.2 (20%). Então o usuario paga o resto = 0.8 (80%)   
 
 
@@ -78,7 +78,7 @@ def PainelAdmin():
         if Opcao == "1":
             # Conta quantos sócios existem em cada categoria
             Contagem = {"Ouro": 0, "Prata": 0, "Bronze": 0, "Social": 0}
-            for S in BaseSocios:
+            for S in BaseSocios: # O "S" é uma variavel temporaria que representa cada um dos sócios que estão guardados dentro da lista
                 Contagem[S['plano']] += 1
             
             TotalSocios = len(BaseSocios) # O ".len" é pra contar quantos elementos existem dentro da lista
@@ -110,7 +110,7 @@ def CriarConta():
     # Validação do E-mail
     while True:
         Email = input("E-mail: ").strip().lower()
-        if not Email:
+        if not Email: # Garante que o usuario não deixe o campo "Email" vazio
             print("[!] O e-mail é obrigatório.")# Caso o usuario não digite nada, ele volta e obriga o usuario a digitar
             continue
         if any(S['email'] == Email for S in BaseSocios):# Garante que não existam e-mails duplicados
@@ -143,6 +143,7 @@ def CriarConta():
                 continue
             Renda = float(InserirRenda)
             break
+
         except ValueError:
             print("[!] Erro: Digite apenas números e use ponto para decimais.")
 
@@ -174,7 +175,7 @@ def CriarConta():
         
         # Verifica se o plano digitado está na lista de permitidos para aquele usuário
         if Plano not in OpcoesValidas:
-            if Plano == "Social" and not EntraSocial:
+            if Plano == "Social" and not EntraSocial: # Caso o usuario tente entrar no plano "Social" e o "EntraSocial" for falso, o programa não deixa
                 print("[!] Erro: Plano Social indisponível para sua renda.")
             else:
                 print("[!] Plano inválido ou não recomendado para seu perfil.")
@@ -297,4 +298,4 @@ def Menu():
 
 Menu() 
 
-# https://github.com/Raul-Lima322/Trabalho-Socio-Torcedor.git
+# https://github.com/Raul-Lima322/Trabalho-Socio-Torcedor
