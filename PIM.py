@@ -137,9 +137,9 @@ def CriarConta():
     # Validação da Renda
     while True:
         try:
-            InserirRenda = input("Sua renda mensal (ex: 2500.00): ").strip()
-            if not InserirRenda:
-                print("[!] A renda é obrigatória para definir o plano.")
+            InserirRenda = float(input("Sua renda mensal (ex: 2500.00): "))
+            if not InserirRenda or InserirRenda < 0:
+                print("[!] A renda é obrigatória para definir o plano.\n")
                 continue
             Renda = float(InserirRenda)
             break
