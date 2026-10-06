@@ -1,6 +1,6 @@
 import os #Biblioteca necessaria para limpar o terminal, permite interagir com o sistema operacional
 
-SenhaAdmin = "9090"
+SenhaAdmin = "9090" #Senha Exemplo
 
 BaseSocios = [
     {
